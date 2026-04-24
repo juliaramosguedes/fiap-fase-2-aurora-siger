@@ -31,7 +31,7 @@ Cenário de missão → Módulos com flags dinâmicos → Fila por prioridade �
 5. **Roteamento** — AUTORIZADO → pousados + Event Stack; ALERTA → Alert Queue + override humano; NEGADO → espera
 
 > [!CAUTION]
-> No cenário padrão, LOG-01 e MIN-01 pousam com combustível abaixo de 60% e `sensor_error=True` por exposição à radiação (orbit_arrival_h > 4h). Sem override humano, a gravidade marciana toma a decisão — e ela não consulta a tripulação.
+> Módulos com anomalias não pousam automaticamente. Sem autorização humana, a gravidade marciana toma a decisão — e ela não consulta a tripulação.
 
 ```mermaid
 flowchart TD
@@ -236,7 +236,7 @@ flowchart LR
 
 ---
 
-## 🔍 Estruturas e Algoritmos
+## 🗂 Estruturas de Dados
 
 | Estrutura | Tipo | Papel |
 |---|---|---|
@@ -247,6 +247,10 @@ flowchart LR
 | Waiting List | Lista | Módulos aguardando zona ou térmica |
 | Event Stack | Lista — LIFO | Ações reversíveis: AUTH_GRANTED, LANDING_INITIATED |
 | Audit Log | Lista append-only | Fatos e eventos não reversíveis — histórico completo |
+
+---
+
+## ⚙️ Algoritmos
 
 | Algoritmo | Uso | Complexidade | Justificativa |
 |---|---|---|---|
@@ -325,4 +329,5 @@ fiap-fase-2-aurora-siger/
 
 ---
 
-★ *"A lógica é o começo da sabedoria, não o fim."* — Spock | Star Trek VI ★
+> [!IMPORTANT]
+> *"A lógica é o começo da sabedoria, não o fim."* 🖖
