@@ -162,7 +162,7 @@ flowchart LR
 
 ---
 
-## 🏗 Arquitetura
+## 🛰 Arquitetura
 
 **Funções puras** — sem efeitos colaterais; mesmo input sempre produz mesmo output. Cada verificação é testável individualmente — mandatório em sistemas de segurança crítica.
 
@@ -176,7 +176,7 @@ flowchart LR
 
 ---
 
-## 📐 Regra de Autorização
+## ⚡ Regra de Autorização
 
 ```
 LANDING_AUTHORIZED =
@@ -225,7 +225,7 @@ flowchart LR
 
 ---
 
-## 📊 Modelos Matemáticos
+## 📡 Modelos Matemáticos
 
 | Fenômeno | Modelo | Tipo | Variável alimentada |
 |---|---|---|---|
@@ -236,7 +236,7 @@ flowchart LR
 
 ---
 
-## 🗂 Estruturas de Dados
+## 🌙 Estruturas de Dados
 
 | Estrutura | Tipo | Papel |
 |---|---|---|
@@ -250,7 +250,7 @@ flowchart LR
 
 ---
 
-## ⚙️ Algoritmos
+## ⭐ Algoritmos
 
 | Algoritmo | Uso | Complexidade | Justificativa |
 |---|---|---|---|
