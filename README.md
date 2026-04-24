@@ -1,6 +1,6 @@
 # ☄️ Aurora Siger — Landing Manager
 
-![Python](https://img.shields.io/badge/PYTHON-3.9+-3776AB?labelColor=0a0f1e&logo=python&logoColor=c5d8f0) ![Módulos](https://img.shields.io/badge/MÓDULOS-7-5dade2?labelColor=0a0f1e&logo=nasa&logoColor=c5d8f0) ![Estruturas](https://img.shields.io/badge/ESTRUTURAS-7-a569bd?labelColor=0a0f1e&logo=alienware&logoColor=c5d8f0) ![Algoritmos](https://img.shields.io/badge/ALGORITMOS-5-FFE200?labelColor=0a0f1e&logo=anthropic&logoColor=c5d8f0) ![Modelos](https://img.shields.io/badge/MODELOS_FÍSICOS-4-52be80?labelColor=0a0f1e&logo=nasa&logoColor=c5d8f0) [![CI](https://img.shields.io/github/actions/workflow/status/juliaramosguedes/fiap-fase-2-aurora-siger/python.yml?label=CI&labelColor=0a0f1e&logo=githubactions&logoColor=c5d8f0)](https://github.com/juliaramosguedes/fiap-fase-2-aurora-siger/actions/workflows/python.yml)
+![Python](https://img.shields.io/badge/PYTHON-3.9+-3776AB?labelColor=0a0f1e&logo=python&logoColor=c5d8f0) [![CI](https://img.shields.io/github/actions/workflow/status/juliaramosguedes/fiap-fase-2-aurora-siger/python.yml?label=CI&labelColor=0a0f1e&logo=githubactions&logoColor=c5d8f0)](https://github.com/juliaramosguedes/fiap-fase-2-aurora-siger/actions/workflows/python.yml)
 
 *Atividade Integradora · Fase 2 · Ciência da Computação, 2026 — FIAP*
 
@@ -8,7 +8,7 @@
 
 ---
 
-![Status](https://img.shields.io/badge/STATUS-BASE_ESTABELECIDA-52be80?logo=startrek&labelColor=0a0f1e&logoColor=c5d8f0)
+![Módulos](https://img.shields.io/badge/MÓDULOS-7-5dade2?labelColor=0a0f1e&logo=nasa&logoColor=c5d8f0) ![Estruturas](https://img.shields.io/badge/ESTRUTURAS-7-a569bd?labelColor=0a0f1e&logo=alienware&logoColor=c5d8f0) ![Algoritmos](https://img.shields.io/badge/ALGORITMOS-5-FFE200?labelColor=0a0f1e&logo=anthropic&logoColor=c5d8f0) ![Modelos](https://img.shields.io/badge/MODELOS_FÍSICOS-4-52be80?labelColor=0a0f1e&logo=spacex&logoColor=c5d8f0) ![Status](https://img.shields.io/badge/STATUS-BASE_ESTABELECIDA-52be80?logo=startrek&labelColor=0a0f1e&logoColor=c5d8f0)
 
 MGPEB — Módulo de Gerenciamento de Pouso e Estabilização de Base. A nave Aurora Siger entrou na órbita de Marte. Sete módulos precisam pousar — na ordem certa, com combustível suficiente, temperatura sob controle, sensores íntegros e zona de pouso disponível. O sistema decide quem pousa, quando, e quem aguarda autorização humana.
 
@@ -21,17 +21,17 @@ MGPEB — Módulo de Gerenciamento de Pouso e Estabilização de Base. A nave Au
 ## 🛸 Pipeline
 
 ```
-7 módulos em órbita → Fila por prioridade → Telemetria calculada → Autorização booleana → Relatório
+Cenário de missão → Módulos com flags dinâmicos → Fila por prioridade → Telemetria calculada → Autorização booleana → Relatório
 ```
 
-1. **Registro** — 7 módulos construídos com `sensor_error` e `zone_clear` computados dinamicamente
+1. **Registro** — módulos construídos a partir do cenário injetado; `sensor_error` e `zone_clear` computados dinamicamente
 2. **Fila de pouso** — Insertion Sort por `landing_priority`; FIFO de processamento
 3. **Telemetria** — 4 modelos físicos do EDL calculam altitude, temperatura e combustível restante
 4. **Autorização** — regra booleana de 5 condições; fail-safe: qualquer falha bloqueia autorização automática
 5. **Roteamento** — AUTORIZADO → pousados + Event Stack; ALERTA → Alert Queue + override humano; NEGADO → espera
 
 > [!CAUTION]
-> LOG-01 e MIN-01 pousam com combustível abaixo de 60% e `sensor_error=True` por exposição à radiação (orbit_arrival_h > 4h). Sem override humano, a gravidade marciana toma a decisão — e ela não consulta a tripulação.
+> No cenário padrão, LOG-01 e MIN-01 pousam com combustível abaixo de 60% e `sensor_error=True` por exposição à radiação (orbit_arrival_h > 4h). Sem override humano, a gravidade marciana toma a decisão — e ela não consulta a tripulação.
 
 ```mermaid
 flowchart TD
@@ -49,7 +49,7 @@ flowchart TD
 ```
 
 <details>
-<summary>🔬 Decisão por módulo — 5 verificações em cadeia</summary>
+<summary>🔬 Decisão por módulo — 5 verificações em cadeia (cenário padrão)</summary>
 
 <details>
 <summary>LSS-01 — Life Support System (Prior. 1 · VITAL)</summary>
@@ -172,7 +172,7 @@ flowchart LR
 
 **Flags dinâmicos** — `sensor_error` e `zone_clear` não são hardcoded. Derivados de `orbit_arrival_h` e do histórico de módulos pousados.
 
-**Pousos sequenciais** — um módulo por vez, em ordem de prioridade. Rationale: simplifica resolução de conflito de zona e semântica da Event Stack. Com n=7 módulos e janelas de chegada espaçadas, o ganho de paralelismo não justifica a complexidade.
+**Pousos sequenciais** — um módulo por vez, em ordem de prioridade. Rationale: simplifica resolução de conflito de zona e semântica da Event Stack. O ganho de paralelismo não justifica a complexidade para o escopo atual.
 
 ---
 
@@ -266,6 +266,15 @@ python landing_manager.py
 
 Sem dependências externas. Biblioteca padrão Python 3.9+.
 
+Para um cenário aleatório, edite `landing_manager.py`:
+
+```python
+from src.scenarios import random_scenario
+from src.simulation import main
+
+main(random_scenario(n=10, anomaly_pct=0.4, seed=42))
+```
+
 ---
 
 ## 🌌 Estrutura
@@ -273,6 +282,7 @@ Sem dependências externas. Biblioteca padrão Python 3.9+.
 ```
 fiap-fase-2-aurora-siger/
 ├── landing_manager.py      ← entry point
+├── ENGINEERING_GUIDE.md    ← walkthrough completo do código para engenheiros
 ├── src/
 │   ├── enums.py            ← Criticality, AlertSeverity, Decision, EventType
 │   ├── constants.py        ← limiares numéricos e constantes físicas
@@ -285,7 +295,6 @@ fiap-fase-2-aurora-siger/
 │   ├── display.py          ← funções de exibição
 │   ├── registry.py         ← build_modules(configs)
 │   └── simulation.py       ← simulate_landing_sequence() + main(scenario?)
-├── ENGINEERING_GUIDE.md    ← walkthrough completo do código para engenheiros
 └── docs/
     ├── landing-modules-reference.md
     ├── thresholds-reference.md
