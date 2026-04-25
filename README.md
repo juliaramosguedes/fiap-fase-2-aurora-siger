@@ -336,8 +336,8 @@ flowchart LR
 
 | Algoritmo | Uso | Complexidade | Justificativa |
 |---|---|---|---|
-| Insertion Sort | Ordenação por prioridade | O(n²) | n=7: microssegundos. Estável + zero memória auxiliar (RAD750) |
-| Selection Sort | Ordenação por combustível | O(n²) | Mínimo de trocas — identifica módulos em risco |
+| Insertion Sort | Ordenação por prioridade | O(n²) | Estável + zero memória auxiliar. Otimizado para n=7 do cenário padrão — para n > ~50, Timsort seria mais adequado |
+| Selection Sort | Ordenação por combustível | O(n²) | Mínimo de trocas — identifica módulos em risco. Mesma limitação de escala do Insertion Sort |
 | Hash Index | Lookup por module_id e criticidade | O(1) | Dict construído uma vez; consultas repetidas em O(1) |
 | Busca Linear | Módulos por janela de chegada | O(n) | Lista não ordenada por arrival_h — scan completo necessário |
 | Busca Binária | Módulo por prioridade | O(log n) | Aproveita lista já ordenada pelo Insertion Sort |
