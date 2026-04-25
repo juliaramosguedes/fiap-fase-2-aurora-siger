@@ -350,7 +350,7 @@ Sem dependências externas. Biblioteca padrão Python 3.9+.
 
 | Argumento | Tipo | Default | Descrição |
 |---|---|---|---|
-| `--random` | flag | ausente | Ativa cenário procedural. Sem ele, usa o cenário padrão com 7 módulos fixos |
+| `--random` | flag | ausente | Ativa cenário procedural. Sem ele, usa o cenário padrão com 7 módulos fixos e 2 anomalias |
 | `--modules` | inteiro | `7` | Quantidade de módulos no cenário aleatório |
 | `--anomaly` | decimal 0–1 | `0.0` | Probabilidade de anomalia por módulo — combustível baixo ou sensor danificado |
 
