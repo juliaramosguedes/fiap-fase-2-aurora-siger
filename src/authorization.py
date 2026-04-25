@@ -14,8 +14,8 @@ from .enums import Decision
 from .models import AuthorizationResult, DescentTelemetry, LandingModule
 
 
-def check_sensor_error(orbit_arrival_h: float) -> bool:
-    return orbit_arrival_h > SENSOR_ERROR_ORBIT_THRESHOLD_H
+def check_sensor_error(time_in_orbit_h: float) -> bool:
+    return time_in_orbit_h > SENSOR_ERROR_ORBIT_THRESHOLD_H
 
 
 def check_zone_clear(

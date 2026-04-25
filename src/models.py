@@ -14,7 +14,8 @@ class LandingModule:
     fuel_pct: float
     mass_kg: float
     criticality: Criticality
-    orbit_arrival_h: float
+    orbit_arrival_h: float   # cumulative window position — used for zone_clear spacing
+    time_in_orbit_h: float   # radiation exposure time — used for sensor_error check
     sensor_error: bool
     zone_clear: bool
 

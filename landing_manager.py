@@ -9,9 +9,11 @@ Authors: Julia Ramos RM568988 | Matheus Fuchelberguer RM569113 | Julio Joaquim R
 FIAP — Ciência da Computação | Fase 2 — Atividade Integradora | 2026
 
 Usage:
-    python landing_manager.py                          # default scenario (7 modules)
-    python landing_manager.py --n 10                   # random scenario, 10 modules
-    python landing_manager.py --n 10 --anomaly-pct 0.4 --seed 42
+    python landing_manager.py                                    # default scenario (7 fixed modules)
+    python landing_manager.py --random                           # random scenario, 7 modules, no anomalies
+    python landing_manager.py --random --modules 10             # random scenario, 10 modules
+    python landing_manager.py --random --anomaly 0.4            # with anomaly probability
+    python landing_manager.py --random --modules 10 --anomaly 0.4
 """
 
 import argparse
@@ -25,13 +27,13 @@ def _parse_args() -> argparse.Namespace:
         prog="landing_manager",
         description="MGPEB — Aurora Siger landing sequence manager",
     )
-    parser.add_argument("--n", type=int, default=None, help="Number of modules (triggers random scenario)")
-    parser.add_argument("--anomaly-pct", type=float, default=0.25, help="Anomaly probability per module (default: 0.25)")
-    parser.add_argument("--seed", type=int, default=None, help="Random seed for reproducibility")
+    parser.add_argument("--random", action="store_true", help="Use procedural random scenario instead of default")
+    parser.add_argument("--modules", type=int, default=7, help="Number of modules for random scenario (default: 7)")
+    parser.add_argument("--anomaly", type=float, default=0.0, help="Anomaly probability per module (default: 0.0)")
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = _parse_args()
-    scenario = random_scenario(n=args.n, anomaly_pct=args.anomaly_pct, seed=args.seed) if args.n is not None else default_scenario()
+    scenario = random_scenario(modules=args.modules, anomaly_pct=args.anomaly) if args.random else default_scenario()
     main(scenario)

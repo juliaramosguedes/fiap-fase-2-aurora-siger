@@ -83,7 +83,7 @@ def simulate_landing_sequence(
             if not result.fuel_ok:
                 reason.append(f"combustível {module.fuel_pct:.0f}% < {FUEL_MIN_PCT:.0f}%")
             if not result.sensor_ok:
-                reason.append(f"erro de sensor (órbita {module.orbit_arrival_h}h > {SENSOR_ERROR_ORBIT_THRESHOLD_H}h)")
+                reason.append(f"erro de sensor (exposição {module.time_in_orbit_h}h > {SENSOR_ERROR_ORBIT_THRESHOLD_H}h)")
             alert_queue = enqueue_alert(alert_queue, module, " | ".join(reason))
             audit_log = append_audit(
                 audit_log, EventType.ALERT_GENERATED, module.module_id,
