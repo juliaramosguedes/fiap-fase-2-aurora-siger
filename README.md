@@ -46,6 +46,19 @@ flowchart TD
     E --> J[Alert Queue FIFO]
     J --> K[Alert List\nordenada por criticidade]
     F --> L[Lista: Em Espera]
+
+    style A fill:#1a1a2e,color:#fff,stroke:#4a90d9
+    style B fill:#16213e,color:#fff,stroke:#4a90d9
+    style C fill:#1a2040,color:#fff,stroke:#4a90d9
+    style D fill:#0a3d0a,color:#fff,stroke:#2ecc71,stroke-width:3px
+    style E fill:#3d2200,color:#fff,stroke:#f39c12,stroke-width:3px
+    style F fill:#3d0a0a,color:#fff,stroke:#e74c3c,stroke-width:3px
+    style G fill:#16213e,color:#fff,stroke:#2ecc71
+    style H fill:#16213e,color:#fff,stroke:#4a90d9
+    style I fill:#16213e,color:#fff,stroke:#4a90d9
+    style J fill:#16213e,color:#fff,stroke:#f39c12
+    style K fill:#16213e,color:#fff,stroke:#f39c12
+    style L fill:#16213e,color:#fff,stroke:#e74c3c
 ```
 
 <details>
@@ -62,6 +75,14 @@ flowchart LR
     D --> E["SEM ERRO\n✔ órbita 0.5 h"]
     E --> F["ZONA LIVRE\n✔ espaçamento 30 min"]
     F --> G([✔ POUSO AUTORIZADO])
+
+    style A fill:#1a1a2e,color:#fff,stroke:#4a90d9
+    style B fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style C fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style D fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style E fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style F fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style G fill:#0a3d0a,color:#fff,stroke:#2ecc71,stroke-width:3px
 ```
 
 </details>
@@ -77,6 +98,14 @@ flowchart LR
     D --> E["SEM ERRO\n✔ órbita 1.0 h"]
     E --> F["ZONA LIVRE\n✔ espaçamento 30 min"]
     F --> G([✔ POUSO AUTORIZADO])
+
+    style A fill:#1a1a2e,color:#fff,stroke:#4a90d9
+    style B fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style C fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style D fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style E fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style F fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style G fill:#0a3d0a,color:#fff,stroke:#2ecc71,stroke-width:3px
 ```
 
 </details>
@@ -92,6 +121,14 @@ flowchart LR
     D --> E["SEM ERRO\n✔ órbita 2.0 h"]
     E --> F["ZONA LIVRE\n✔ espaçamento 60 min"]
     F --> G([✔ POUSO AUTORIZADO])
+
+    style A fill:#1a1a2e,color:#fff,stroke:#4a90d9
+    style B fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style C fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style D fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style E fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style F fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style G fill:#0a3d0a,color:#fff,stroke:#2ecc71,stroke-width:3px
 ```
 
 </details>
@@ -107,6 +144,14 @@ flowchart LR
     D --> E["SEM ERRO\n✔ órbita 2.5 h"]
     E --> F["ZONA LIVRE\n✔ espaçamento 30 min"]
     F --> G([✔ POUSO AUTORIZADO])
+
+    style A fill:#1a1a2e,color:#fff,stroke:#4a90d9
+    style B fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style C fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style D fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style E fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style F fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style G fill:#0a3d0a,color:#fff,stroke:#2ecc71,stroke-width:3px
 ```
 
 </details>
@@ -122,6 +167,14 @@ flowchart LR
     D --> E["SEM ERRO\n✔ órbita 4.0 h"]
     E --> F["ZONA LIVRE\n✔ espaçamento 90 min"]
     F --> G([✔ POUSO AUTORIZADO])
+
+    style A fill:#1a1a2e,color:#fff,stroke:#4a90d9
+    style B fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style C fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style D fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style E fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style F fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style G fill:#0a3d0a,color:#fff,stroke:#2ecc71,stroke-width:3px
 ```
 
 </details>
@@ -138,6 +191,14 @@ flowchart LR
     E --> F["ZONA LIVRE\n✔ espaçamento 90 min"]
     C --> G
     E --> G([⚠ AGUARDANDO AUTORIZAÇÃO MANUAL])
+
+    style A fill:#1a1a2e,color:#fff,stroke:#4a90d9
+    style B fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style C fill:#3d1500,color:#fff,stroke:#f39c12
+    style D fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style E fill:#3d1500,color:#fff,stroke:#f39c12
+    style F fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style G fill:#3d2200,color:#fff,stroke:#f39c12,stroke-width:3px
 ```
 
 </details>
@@ -154,6 +215,14 @@ flowchart LR
     E --> F["ZONA LIVRE\n✔ espaçamento 90 min"]
     C --> G
     E --> G([⚠ AGUARDANDO AUTORIZAÇÃO MANUAL])
+
+    style A fill:#1a1a2e,color:#fff,stroke:#4a90d9
+    style B fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style C fill:#3d1500,color:#fff,stroke:#f39c12
+    style D fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style E fill:#3d1500,color:#fff,stroke:#f39c12
+    style F fill:#1a2a3d,color:#fff,stroke:#2ecc71
+    style G fill:#3d2200,color:#fff,stroke:#f39c12,stroke-width:3px
 ```
 
 </details>
@@ -205,6 +274,19 @@ flowchart LR
     OUT1 -->|False| CHK{NOT fuel_ok\nOU sensor_error?}
     CHK -->|Sim| ALERT([⚠ AGUARDANDO\nAUTORIZAÇÃO MANUAL])
     CHK -->|Não| DENY([✗ POUSO\nNEGADO])
+
+    style A1 fill:#16213e,color:#fff,stroke:#4a90d9
+    style A2 fill:#16213e,color:#fff,stroke:#4a90d9
+    style A3 fill:#16213e,color:#fff,stroke:#4a90d9
+    style A4 fill:#16213e,color:#fff,stroke:#4a90d9
+    style A5 fill:#16213e,color:#fff,stroke:#4a90d9
+    style NOT1 fill:#1a2040,color:#fff,stroke:#4a90d9
+    style AND1 fill:#1a2040,color:#fff,stroke:#4a90d9
+    style OUT1 fill:#16213e,color:#fff,stroke:#4a90d9
+    style AUTH fill:#0a3d0a,color:#fff,stroke:#2ecc71,stroke-width:3px
+    style CHK fill:#1a2040,color:#fff,stroke:#4a90d9
+    style ALERT fill:#3d2200,color:#fff,stroke:#f39c12,stroke-width:3px
+    style DENY fill:#3d0a0a,color:#fff,stroke:#e74c3c,stroke-width:3px
 ```
 
 </details>
