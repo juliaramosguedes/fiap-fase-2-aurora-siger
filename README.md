@@ -346,19 +346,17 @@ flowchart LR
 
 ## 🚀 Como executar
 
-```bash
-python landing_manager.py
-```
-
 Sem dependências externas. Biblioteca padrão Python 3.9+.
 
-Para um cenário aleatório, edite `landing_manager.py`:
+```bash
+# cenário padrão — 7 módulos fixos
+python landing_manager.py
 
-```python
-from src.scenarios import random_scenario
-from src.simulation import main
+# cenário aleatório — n módulos procedurais
+python landing_manager.py --n 10
 
-main(random_scenario(n=10, anomaly_pct=0.4, seed=42))
+# com anomaly-pct e seed para reprodutibilidade
+python landing_manager.py --n 10 --anomaly-pct 0.4 --seed 42
 ```
 
 ---
