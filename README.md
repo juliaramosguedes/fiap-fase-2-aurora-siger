@@ -318,6 +318,20 @@ flowchart LR
 
 ---
 
+## 📈 Gráficos dos Modelos Matemáticos
+
+> Gerados por `python docs/generate_plots.py` a partir das funções reais de `src/physics.py`.
+
+| Altitude | Arrasto |
+|---|---|
+| ![](docs/plots/altitude.png) | ![](docs/plots/drag_force.png) |
+
+| Temperatura | Combustível |
+|---|---|
+| ![](docs/plots/temperature.png) | ![](docs/plots/fuel_consumption.png) |
+
+---
+
 ## 🌙 Estruturas de Dados
 
 | Estrutura | Tipo | Papel |

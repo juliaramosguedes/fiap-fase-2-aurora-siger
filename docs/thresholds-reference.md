@@ -123,6 +123,8 @@ h(t) = h₀ - v₀·t - ½·g_mars·t²
 **Source:** NASA. *Mars Fact Sheet*. https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html
 **Source:** NASA JPL. *MSL EDL Overview*. 2012.
 
+![Altitude × Tempo](plots/altitude.png)
+
 ---
 
 ### Model 2 — Fuel consumption as a function of velocity (quadratic)
@@ -137,6 +139,8 @@ F(v) = k · v²
 
 **Source:** Anderson, J. *Introduction to Flight*. McGraw-Hill, 2016.
 **Source:** NASA GRC. *Mars Atmosphere Model*. https://www.grc.nasa.gov/www/k-12/airplane/atmosmrm.html
+
+![Força de Arrasto × Velocidade](plots/drag_force.png)
 
 ---
 
@@ -153,6 +157,8 @@ T(t) = T_surface + (T_entry - T_surface) · e^(-λ·t)
 
 **Source:** Edquist, K. et al. *Aerothermodynamics for the MSL Entry Capsule*. AIAA 2009-4117.
 **Source:** NASA JPL. *MEDLI*. 2012.
+
+![Temperatura da Fuselagem × Tempo](plots/temperature.png)
 
 ---
 
@@ -176,6 +182,8 @@ the safety threshold.
 **Source:** NASA JPL. *MSL EDL Overview (2012)* — powered descent duration and thrust profile.
 **Source:** `FUEL_BURN_RATE_PCT_PER_S = 0.05 %/s` (SIMULATED)
 
+![Consumo de Combustível × Tempo](plots/fuel_consumption.png)
+
 ---
 
 ## Dynamic Flag Computation
@@ -185,7 +193,7 @@ the safety threshold.
 Previously hardcoded `False` — now computed dynamically.
 
 ```
-sensor_error = orbit_arrival_h > SENSOR_ERROR_ORBIT_THRESHOLD_H
+sensor_error = time_in_orbit_h > SENSOR_ERROR_ORBIT_THRESHOLD_H
 ```
 
 - `SENSOR_ERROR_ORBIT_THRESHOLD_H = 4.0 h` (SIMULATED)

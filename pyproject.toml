@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aurora-siger"
+version = "1.0.0"
+requires-python = ">=3.9"
+description = "MGPEB — Módulo de Gerenciamento de Pouso e Estabilização de Base"
+
+[project.optional-dependencies]
+dev = ["matplotlib", "numpy"]
