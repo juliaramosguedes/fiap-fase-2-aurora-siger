@@ -320,7 +320,12 @@ flowchart LR
 
 ## 📈 Gráficos dos Modelos Matemáticos
 
-> Para regenerar: `pip install -e ".[dev]"` e então `python docs/generate_plots.py`. Requer Python 3.9+ com matplotlib e numpy.
+> [!NOTE]
+> Gerados a partir das funções reais de `src/physics.py` e constantes de `src/constants.py`. Para regenerar após mudanças nesses arquivos, instale as dependências de desenvolvimento e execute o script:
+> ```bash
+> pip install -e ".[dev]"
+> python docs/generate_plots.py
+> ```
 
 | Altitude | Arrasto |
 |---|---|
