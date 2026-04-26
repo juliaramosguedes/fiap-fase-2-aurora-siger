@@ -320,7 +320,7 @@ flowchart LR
 
 ## 📈 Gráficos dos Modelos Matemáticos
 
-> Gerados por `python docs/generate_plots.py` a partir das funções reais de `src/physics.py`.
+> Para regenerar: `pip install -e ".[dev]"` e então `python docs/generate_plots.py`. Requer Python 3.9+ com matplotlib e numpy.
 
 | Altitude | Arrasto |
 |---|---|

@@ -1,6 +1,9 @@
 """
 Generate physics model plots for MGPEB documentation.
 
+Requirements (dev dependencies):
+    pip install -e ".[dev]"
+
 Usage (from any directory in the repo):
     python docs/generate_plots.py
 
